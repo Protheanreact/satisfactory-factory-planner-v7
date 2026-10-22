@@ -2,67 +2,83 @@
 
 **Plan production chains. Compare recipes. Design your factory.**
 
-[**Open the live web app →**](https://protheanreact.github.io/satisfactory-factory-planner-v7/)
+[**Open the live demo →**](https://protheanreact.github.io/satisfactory-factory-planner-v7/) · [Report a bug](https://github.com/Protheanreact/satisfactory-factory-planner-v7/issues) · [View source](https://github.com/Protheanreact/satisfactory-factory-planner-v7)
 
-Satisfactory Factory Planner is a browser-based planning tool for *Satisfactory*. It combines production-chain calculations, a visual factory editor, a resource map and version-aware game-data checks in one dark, compact interface.
+Satisfactory Factory Planner is a browser-based companion for planning production in *Satisfactory*. It brings a production-chain optimizer, a visual factory editor, a resource map, and game-data checks together in one interface.
 
-> The screenshots show the application UI and example data. Calculations are planning aids; verify important layouts and rates against the game version you play.
+> **Planning aid, not an in-game simulator.** Results depend on the loaded game dataset and the options you select. Check important production rates against the game version you play.
+
+## At a glance
+
+- Compare production chains and recipe variants for a target item.
+- Explore optimization goals such as fewer machines, lower power use, or reduced raw-resource demand.
+- Sketch a factory layout and import or export project JSON.
+- Explore resource nodes by resource type and purity.
+- Review the loaded game-data version and run structural recipe checks.
+- Use local cached game data when an update source is unavailable.
+- Use Supabase-backed cloud saving when the required cloud configuration is enabled.
 
 ## Screenshots
 
 ### Production optimizer
 
-Compare production paths for a target item and review machine count, power use and required inputs. Choose an optimization objective and configure alternative recipes, overclocking and Somersloops.
+Compare candidate production paths, machine counts, power use, and required inputs. Configure optimization goals, alternate recipes, overclocking, and Somersloops.
 
-![Production optimizer](docs/screenshots/production-optimizer.png)
+![Production optimizer showing production-chain calculations and optimization options](docs/screenshots/production-optimizer.png)
 
 ### Visual factory editor
 
-Place production nodes, configure machines and connect them to sketch a factory layout. Projects can be imported and exported as JSON.
+Place production nodes, configure machines, and connect elements to sketch a factory layout. Project layouts can be imported and exported as JSON.
 
-![Factory editor](docs/screenshots/factory-editor.png)
+![Visual factory editor with connected production nodes](docs/screenshots/factory-editor.png)
 
 ### Resource map
 
-Explore resource-node locations on the world map and filter them by resource and node purity.
+Explore resource-node locations and filter the map by resource and node purity.
 
-![Resource map](docs/screenshots/resource-map.png)
+![Resource map with resource-node filters](docs/screenshots/resource-map.png)
 
 ### Game data and recipe audit
 
-Review the loaded game-data version, item and recipe counts, and structural recipe-audit results. The app checks for updates and retains a validated cached dataset for fallback use.
+Inspect the loaded dataset version, item and recipe counts, and structural recipe-audit results.
 
-![Game data and recipe audit](docs/screenshots/game-data-audit.png)
+![Game data and recipe audit panel](docs/screenshots/game-data-audit.png)
 
 ## Features
 
-- **Production planning:** calculate a target production chain and compare available recipe variants.
-- **Optimization objectives:** best combination, low power use, fewer machines or lower raw-resource demand.
-- **Production strategies:** Direct, Efficient and Maximum Output.
-- **Recipe options:** optionally include alternate recipes, overclocking and Somersloops.
-- **Transparent balances:** show material inputs and outputs for the calculated chain, including possible deficits and surplus by-products.
-- **Factory editor:** place and connect production elements, adjust machine and belt settings, and import/export project JSON.
-- **Resource map:** inspect resource nodes and filter by resource and purity.
-- **Game-data checks:** display dataset version/build, refresh data and audit recipe references.
-- **Local caching:** use the last successfully validated game-data snapshot when an update source is unavailable.
-- **Cloud sync:** Supabase-backed cloud saving is supported when the cloud configuration is enabled.
-- **Desktop packaging:** the project includes Electron packaging groundwork for a portable Windows x64 build; a release executable is not included in this repository by default.
+| Area | What it does |
+| --- | --- |
+| Production planning | Calculates a target production chain and compares available recipe variants. |
+| Optimization | Offers objectives such as best combination, low power use, fewer machines, or lower raw-resource demand. |
+| Production strategies | Includes Direct, Efficient, and Maximum Output strategies. |
+| Recipe options | Can include alternate recipes, overclocking, and Somersloops. |
+| Material balances | Shows inputs, outputs, potential deficits, and surplus by-products in the calculated chain. |
+| Factory editor | Lets you place and connect production elements, adjust machine and belt settings, and import/export project JSON. |
+| Resource map | Displays resource nodes with resource and purity filters. |
+| Game-data checks | Displays dataset version/build, supports refreshes, and audits recipe references. |
+| Local cache | Keeps the last successfully validated game-data snapshot available as a fallback. |
+| Cloud saving | Supabase-backed saving is available when the app is configured with the required Supabase settings. |
+| Desktop packaging | Includes an Electron-based portable Windows x64 packaging script; a ready-made release executable is not included by default. |
 
-## Live demo
+## Live demo and deployment
 
-[https://protheanreact.github.io/satisfactory-factory-planner-v7/](https://protheanreact.github.io/satisfactory-factory-planner-v7/)
+**Live app:** [protheanreact.github.io/satisfactory-factory-planner-v7](https://protheanreact.github.io/satisfactory-factory-planner-v7/)
 
-The web version is deployed with GitHub Pages. Some features, such as cloud saving, depend on the corresponding environment configuration.
+The app is published to GitHub Pages through GitHub Actions. A push to the `main` branch triggers the workflow, which installs dependencies, builds the app, and deploys the generated `dist/` directory.
+
+The browser demo and a locally configured app may not have identical capabilities. In particular, cloud saving requires the corresponding Supabase configuration; do not put private service-role keys or other secrets into client-side code or commit them to the repository.
 
 ## Run locally on Windows
 
 ### Requirements
 
-- Node.js LTS (Node 20 or newer recommended)
-- npm, installed with Node.js
-- Git, if you clone the repository
+- Node.js (Node 20 or newer recommended; the deployment workflow currently uses Node 22)
+- npm, included with Node.js
+- Git, if you want to clone the repository
 
-### Install and start
+### Install and start the development server
+
+Open PowerShell or a terminal:
 
 ```powershell
 git clone https://github.com/Protheanreact/satisfactory-factory-planner-v7.git
@@ -73,33 +89,50 @@ npm run dev
 
 Open the local URL printed by Vite, usually `http://localhost:5173`.
 
-### Build and test
+### Run tests and create a production build
 
 ```powershell
 npm test
 npm run build
 ```
 
-The production build is written to `dist/`.
+The production build is written to `dist/`. The build command also runs the TypeScript project build before Vite creates the production assets.
 
-## Game data
+### Create a portable Windows build
 
-The app loads versioned community game data from the [Ficsit Planner data repository](https://github.com/Albis0/ficsit_planner) (`src/data`). This is a community-maintained source, not an official Coffee Stain Studios API. The displayed dataset version can lag behind a new game patch, so compare important production rates with the exact Satisfactory version you use.
+The repository defines this packaging command:
+
+```powershell
+npm run package:portable
+```
+
+This uses Electron Builder to attempt a portable Windows x64 package. Packaging may depend on the local environment and project configuration; the repository does not include a prebuilt executable by default.
+
+## Game data and accuracy
+
+The project uses versioned community game data from the [Ficsit Planner data repository](https://github.com/Albis0/ficsit_planner), stored in the project's `src/data` area. This is a community-maintained source, not an official Coffee Stain Studios API. The dataset may lag behind a new game patch, so verify important calculations against the exact game version you use.
 
 ## Known limitations
 
-- The production solver is a bounded heuristic search, not a global linear or mixed-integer optimization solver. A result is a useful candidate, not a mathematical proof of the globally optimal solution.
-- Resource-node limits, belt and pipe capacities, available power, shard inventory and Somersloop placement are not all jointly optimized as one global constraint system.
-- Material balances are shown transparently, but surplus by-products are not automatically reused to optimize every other branch of the chain.
-- The recipe audit checks data structure and references; it does not prove that every in-game mechanic is modeled perfectly.
-- Game data may lag behind the current game release.
+- **Heuristic optimization:** the production solver uses a bounded heuristic search. It finds useful candidate plans but does not prove that a result is globally optimal.
+- **Not every constraint is solved together:** resource-node limits, belt and pipe capacities, available power, shard inventory, and Somersloop placement are not all jointly optimized as one global constraint system.
+- **By-product reuse:** material balances are shown, but surplus by-products are not automatically reused to optimize every other branch of the chain.
+- **Recipe audit scope:** structural checks help identify data/reference issues; they do not prove that every in-game mechanic is modeled perfectly.
+- **Dataset freshness:** game data may lag behind the current game release.
 
-## Contributing
+## Reporting issues and contributing
 
-Issues and pull requests are welcome. When reporting a problem, include the app version, Satisfactory game version, target item, production rate, selected recipe options and a short description of the expected versus actual result. Please avoid including secrets or Supabase credentials in issues.
+Issues and pull requests are welcome. When reporting a problem, include:
 
-## English summary
+- The app version and Satisfactory game version
+- The target item and desired production rate
+- Selected recipe and optimization options
+- What you expected and what happened instead
 
-Satisfactory Factory Planner is a browser-based planning tool with a production optimizer, node-based factory editor, resource map and game-data/recipe audit. It supports recipe variants, configurable optimization goals, local game-data caching and optional Supabase cloud saving. Its solver is heuristic, so results should be checked against the game version in use.
+Please do not include passwords, access tokens, Supabase secrets, or other credentials in issues or pull requests.
 
-**Live demo:** [Open Satisfactory Factory Planner](https://protheanreact.github.io/satisfactory-factory-planner-v7/)
+## Summary
+
+Satisfactory Factory Planner combines production-chain planning, recipe comparisons, a visual factory editor, a resource map, and game-data checks. It supports configurable optimization goals, local game-data caching, and optional Supabase cloud saving. Because its solver is heuristic and its dataset can lag behind game updates, treat results as planning candidates and verify critical rates in-game.
+
+**[Launch the live app →](https://protheanreact.github.io/satisfactory-factory-planner-v7/)**
