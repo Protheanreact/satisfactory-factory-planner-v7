@@ -1,0 +1,16 @@
+appId: de.satisfactoryfactoryplanner.app
+productName: Satisfactory Factory Planner
+directories:
+  output: release
+files:
+  - dist/**/*
+  - main.cjs
+  - package.json
+asar: true
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+portable:
+  artifactName: Satisfactory-Factory-Planner-${version}-portable.exe

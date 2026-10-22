@@ -1,0 +1,78 @@
+ .gitignore                                         |      7 [32m+[m
+ ...Satisfactory-Factory-Planner-0.9.0-portable.exe |    Bin [31m109051650[m -> [32m0[m bytes
+ release/builder-debug.yml                          |     22 [31m-[m
+ release/builder-effective-config.yaml              |     19 [31m-[m
+ release/win-unpacked/LICENSE.electron.txt          |     21 [31m-[m
+ release/win-unpacked/LICENSES.chromium.html        | 104766 [31m------------------[m
+ .../win-unpacked/Satisfactory Factory Planner.exe  |    Bin [31m249798144[m -> [32m0[m bytes
+ release/win-unpacked/chrome_100_percent.pak        |    Bin [31m568418[m -> [32m0[m bytes
+ release/win-unpacked/chrome_200_percent.pak        |    Bin [31m927757[m -> [32m0[m bytes
+ release/win-unpacked/d3dcompiler_47.dll            |    Bin [31m4753864[m -> [32m0[m bytes
+ release/win-unpacked/dxcompiler.dll                |    Bin [31m25779712[m -> [32m0[m bytes
+ release/win-unpacked/electron_wer.dll              |    Bin [31m425472[m -> [32m0[m bytes
+ release/win-unpacked/ffmpeg.dll                    |    Bin [31m3097600[m -> [32m0[m bytes
+ release/win-unpacked/icudtl.dat                    |    Bin [31m10824432[m -> [32m0[m bytes
+ release/win-unpacked/locales/af.pak                |    Bin [31m641339[m -> [32m0[m bytes
+ release/win-unpacked/locales/am.pak                |    Bin [31m1037302[m -> [32m0[m bytes
+ release/win-unpacked/locales/ar.pak                |    Bin [31m1143075[m -> [32m0[m bytes
+ release/win-unpacked/locales/bg.pak                |    Bin [31m1189898[m -> [32m0[m bytes
+ release/win-unpacked/locales/bn.pak                |    Bin [31m1526566[m -> [32m0[m bytes
+ release/win-unpacked/locales/ca.pak                |    Bin [31m724869[m -> [32m0[m bytes
+ release/win-unpacked/locales/cs.pak                |    Bin [31m753878[m -> [32m0[m bytes
+ release/win-unpacked/locales/da.pak                |    Bin [31m674463[m -> [32m0[m bytes
+ release/win-unpacked/locales/de.pak                |    Bin [31m728057[m -> [32m0[m bytes
+ release/win-unpacked/locales/el.pak                |    Bin [31m1309811[m -> [32m0[m bytes
+ release/win-unpacked/locales/en-GB.pak             |    Bin [31m585046[m -> [32m0[m bytes
+ release/win-unpacked/locales/en-US.pak             |    Bin [31m592299[m -> [32m0[m bytes
+ release/win-unpacked/locales/es-419.pak            |    Bin [31m714496[m -> [32m0[m bytes
+ release/win-unpacked/locales/es.pak                |    Bin [31m710842[m -> [32m0[m bytes
+ release/win-unpacked/locales/et.pak                |    Bin [31m649737[m -> [32m0[m bytes
+ release/win-unpacked/locales/fa.pak                |    Bin [31m1078263[m -> [32m0[m bytes
+ release/win-unpacked/locales/fi.pak                |    Bin [31m663455[m -> [32m0[m bytes
+ release/win-unpacked/locales/fil.pak               |    Bin [31m748590[m -> [32m0[m bytes
+ release/win-unpacked/locales/fr.pak                |    Bin [31m774154[m -> [32m0[m bytes
+ release/win-unpacked/locales/gu.pak                |    Bin [31m1508809[m -> [32m0[m bytes
+ release/win-unpacked/locales/he.pak                |    Bin [31m941003[m -> [32m0[m bytes
+ release/win-unpacked/locales/hi.pak                |    Bin [31m1601863[m -> [32m0[m bytes
+ release/win-unpacked/locales/hr.pak                |    Bin [31m724777[m -> [32m0[m bytes
+ release/win-unpacked/locales/hu.pak                |    Bin [31m775366[m -> [32m0[m bytes
+ release/win-unpacked/locales/id.pak                |    Bin [31m642959[m -> [32m0[m bytes
+ release/win-unpacked/locales/it.pak                |    Bin [31m700983[m -> [32m0[m bytes
+ release/win-unpacked/locales/ja.pak                |    Bin [31m853537[m -> [32m0[m bytes
+ release/win-unpacked/locales/kn.pak                |    Bin [31m1738870[m -> [32m0[m bytes
+ release/win-unpacked/locales/ko.pak                |    Bin [31m730396[m -> [32m0[m bytes
+ release/win-unpacked/locales/lt.pak                |    Bin [31m785117[m -> [32m0[m bytes
+ release/win-unpacked/locales/lv.pak                |    Bin [31m782864[m -> [32m0[m bytes
+ release/win-unpacked/locales/ml.pak                |    Bin [31m1785503[m -> [32m0[m bytes
+ release/win-unpacked/locales/mr.pak                |    Bin [31m1481173[m -> [32m0[m bytes
+ release/win-unpacked/locales/ms.pak                |    Bin [31m677751[m -> [32m0[m bytes
+ release/win-unpacked/locales/nb.pak                |    Bin [31m643919[m -> [32m0[m bytes
+ release/win-unpacked/locales/nl.pak                |    Bin [31m671754[m -> [32m0[m bytes
+ release/win-unpacked/locales/pl.pak                |    Bin [31m751664[m -> [32m0[m bytes
+ release/win-unpacked/locales/pt-BR.pak             |    Bin [31m705541[m -> [32m0[m bytes
+ release/win-unpacked/locales/pt-PT.pak             |    Bin [31m708355[m -> [32m0[m bytes
+ release/win-unpacked/locales/ro.pak                |    Bin [31m733934[m -> [32m0[m bytes
+ release/win-unpacked/locales/ru.pak                |    Bin [31m1212098[m -> [32m0[m bytes
+ release/win-unpacked/locales/sk.pak                |    Bin [31m766425[m -> [32m0[m bytes
+ release/win-unpacked/locales/sl.pak                |    Bin [31m729966[m -> [32m0[m bytes
+ release/win-unpacked/locales/sr.pak                |    Bin [31m1124220[m -> [32m0[m bytes
+ release/win-unpacked/locales/sv.pak                |    Bin [31m654595[m -> [32m0[m bytes
+ release/win-unpacked/locales/sw.pak                |    Bin [31m692169[m -> [32m0[m bytes
+ release/win-unpacked/locales/ta.pak                |    Bin [31m1773876[m -> [32m0[m bytes
+ release/win-unpacked/locales/te.pak                |    Bin [31m1648207[m -> [32m0[m bytes
+ release/win-unpacked/locales/th.pak                |    Bin [31m1377527[m -> [32m0[m bytes
+ release/win-unpacked/locales/tr.pak                |    Bin [31m706657[m -> [32m0[m bytes
+ release/win-unpacked/locales/uk.pak                |    Bin [31m1225347[m -> [32m0[m bytes
+ release/win-unpacked/locales/ur.pak                |    Bin [31m1060438[m -> [32m0[m bytes
+ release/win-unpacked/locales/vi.pak                |    Bin [31m839397[m -> [32m0[m bytes
+ release/win-unpacked/locales/zh-CN.pak             |    Bin [31m599993[m -> [32m0[m bytes
+ release/win-unpacked/locales/zh-TW.pak             |    Bin [31m592033[m -> [32m0[m bytes
+ release/win-unpacked/resources.pak                 |    Bin [31m13371538[m -> [32m0[m bytes
+ release/win-unpacked/resources/app.asar            |    Bin [31m43773292[m -> [32m0[m bytes
+ release/win-unpacked/resources/elevate.exe         |    Bin [31m107520[m -> [32m0[m bytes
+ release/win-unpacked/snapshot_blob.bin             |    Bin [31m374096[m -> [32m0[m bytes
+ release/win-unpacked/v8_context_snapshot.bin       |    Bin [31m753112[m -> [32m0[m bytes
+ release/win-unpacked/vk_swiftshader.dll            |    Bin [31m5453312[m -> [32m0[m bytes
+ release/win-unpacked/vk_swiftshader_icd.json       |      1 [31m-[m
+ release/win-unpacked/vulkan-1.dll                  |    Bin [31m957440[m -> [32m0[m bytes
+ 77 files changed, 7 insertions(+), 104829 deletions(-)
